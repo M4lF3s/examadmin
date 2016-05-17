@@ -1,0 +1,74 @@
+<div>
+    <h2>Klausurs</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="klausur.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Klausur
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Pfad</span></th>
+                    <th><span>Art</span></th>
+                    <th><span>Pruefungsform</span></th>
+                    <th><span>Art</span></th>
+                    <th><span>K ID</span></th>
+                    <th><span>Semester</span></th>
+                    <th><span>Dozent</span></th>
+                    <th><span>Fach</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="klausur in vm.klausurs track by klausur.id">
+                    <td><a ui-sref="klausur-detail({id:klausur.id})">{{klausur.id}}</a></td>
+                    <td>{{klausur.pfad}}</td>
+                    <td translate="{{'examadminApp.Art.' + klausur.art}}">{{klausur.art}}</td>
+                    <td>{{klausur.pruefungsform}}</td>
+                    <td translate="{{'examadminApp.Art.' + klausur.art}}">{{klausur.art}}</td>
+                    <td>{{klausur.kID}}</td>
+                    <td>{{klausur.semester}}</td>
+                    <td>
+                        <a ui-sref="dozent-detail({id:klausur.dozent.id})">{{klausur.dozent.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="fach-detail({id:klausur.fach.id})">{{klausur.fach.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="klausur-detail({id:klausur.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="klausur.edit({id:klausur.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="klausur.delete({id:klausur.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

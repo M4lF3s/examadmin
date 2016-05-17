@@ -1,0 +1,116 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myKlausurLabel">Create or edit a Klausur</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.klausur.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.klausur.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pfad">Pfad</label>
+            <input type="text" class="form-control" name="pfad" id="field_pfad"
+                    ng-model="vm.klausur.pfad"
+                    required />
+            <div ng-show="editForm.pfad.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pfad.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_art">Art</label>
+            <select class="form-control" name="art" ng-model="vm.klausur.art" id="field_art" required>
+                <option value="MUENDLICH">MUENDLICH</option>
+                <option value="SCHRIFTLICH">SCHRIFTLICH</option>
+            </select>
+            <div ng-show="editForm.art.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.art.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pruefungsform">Pruefungsform</label>
+            <input type="text" class="form-control" name="pruefungsform" id="field_pruefungsform"
+                    ng-model="vm.klausur.pruefungsform"
+                    required />
+            <div ng-show="editForm.pruefungsform.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pruefungsform.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_art">Art</label>
+            <select class="form-control" name="art" ng-model="vm.klausur.art" id="field_art" required>
+                <option value="MUENDLICH">MUENDLICH</option>
+                <option value="SCHRIFTLICH">SCHRIFTLICH</option>
+            </select>
+            <div ng-show="editForm.art.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.art.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_kID">K ID</label>
+            <input type="number" class="form-control" name="kID" id="field_kID"
+                    ng-model="vm.klausur.kID"
+                    required />
+            <div ng-show="editForm.kID.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.kID.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.kID.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_semester">Semester</label>
+            <input type="text" class="form-control" name="semester" id="field_semester"
+                    ng-model="vm.klausur.semester"
+                    required />
+            <div ng-show="editForm.semester.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.semester.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_dozent">Dozent</label>
+            <select class="form-control" id="field_dozent" name="dozent" ng-model="vm.klausur.dozent" ng-options="dozent as dozent.id for dozent in vm.dozents track by dozent.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_fach">Fach</label>
+            <select class="form-control" id="field_fach" name="fach" ng-model="vm.klausur.fach" ng-options="fach as fach.id for fach in vm.faches track by fach.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

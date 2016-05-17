@@ -1,0 +1,41 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "klausur",
+      "otherEntityName": "klausur",
+      "relationshipType": "one-to-many",
+      "otherEntityRelationshipName": "fach"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "dozent",
+      "otherEntityName": "dozent",
+      "relationshipType": "many-to-many",
+      "ownerSide": false,
+      "otherEntityRelationshipName": "fach"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "fID",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160517141852",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no"
+}

@@ -1,0 +1,46 @@
+
+<div>
+    <h2><span>Klausur</span> {{vm.klausur.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Pfad</span></dt>
+        <dd>
+            <span>{{vm.klausur.pfad}}</span>
+        </dd>
+        <dt><span>Art</span></dt>
+        <dd>
+            <span translate="{{'examadminApp.Art.' + vm.klausur.art}}">{{vm.klausur.art}}</span>
+        </dd>
+        <dt><span>Pruefungsform</span></dt>
+        <dd>
+            <span>{{vm.klausur.pruefungsform}}</span>
+        </dd>
+        <dt><span>Art</span></dt>
+        <dd>
+            <span translate="{{'examadminApp.Art.' + vm.klausur.art}}">{{vm.klausur.art}}</span>
+        </dd>
+        <dt><span>K ID</span></dt>
+        <dd>
+            <span>{{vm.klausur.kID}}</span>
+        </dd>
+        <dt><span>Semester</span></dt>
+        <dd>
+            <span>{{vm.klausur.semester}}</span>
+        </dd>
+        <dt><span>Dozent</span></dt>
+        <dd>
+            <a ui-sref="dozent-detail({id:vm.klausur.dozent.id})">{{vm.klausur.dozent.id}}</a>
+        </dd>
+        <dt><span>Fach</span></dt>
+        <dd>
+            <a ui-sref="fach-detail({id:vm.klausur.fach.id})">{{vm.klausur.fach.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+</div>

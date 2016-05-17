@@ -1,0 +1,74 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipName": "dozent",
+      "otherEntityName": "dozent",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipId": 2,
+      "relationshipName": "fach",
+      "otherEntityName": "fach",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "pfad",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "art",
+      "fieldType": "Art",
+      "fieldValues": "MUENDLICH,SCHRIFTLICH",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 3,
+      "fieldName": "pruefungsform",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 4,
+      "fieldName": "art",
+      "fieldType": "Art",
+      "fieldValues": "MUENDLICH,SCHRIFTLICH",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 5,
+      "fieldName": "kID",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 6,
+      "fieldName": "semester",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160517141853",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no"
+}

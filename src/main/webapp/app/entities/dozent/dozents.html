@@ -1,0 +1,66 @@
+<div>
+    <h2>Dozents</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="dozent.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Dozent
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Vorname</span></th>
+                    <th><span>Nachname</span></th>
+                    <th><span>D ID</span></th>
+                    <th><span>Fach</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="dozent in vm.dozents track by dozent.id">
+                    <td><a ui-sref="dozent-detail({id:dozent.id})">{{dozent.id}}</a></td>
+                    <td>{{dozent.vorname}}</td>
+                    <td>{{dozent.nachname}}</td>
+                    <td>{{dozent.dID}}</td>
+                    <td>
+                        <span ng-repeat="fach in dozent.faches">
+                            <a class="form-control-static" ui-sref="fach-detail({id: {{fach.id}}})">{{fach.id}}</a>{{$last ? '' : ', '}}
+                        </span>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="dozent-detail({id:dozent.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="dozent.edit({id:dozent.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="dozent.delete({id:dozent.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
